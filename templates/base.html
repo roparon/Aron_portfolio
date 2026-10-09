@@ -1,0 +1,214 @@
+<!-- templates/base.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08110e"
+    >
+
+    <meta
+        name="description"
+        content="Aron Rop is a Full-Stack Software Engineer building robust Python/Flask backends, responsive interfaces and production-ready web systems."
+    >
+
+    <meta
+        name="author"
+        content="Aron Rop"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <link
+        rel="canonical"
+        href="{{ config.site_url }}"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Aron Rop — Full-Stack Software Engineer"
+    >
+
+    <meta
+        property="og:description"
+        content="Full-Stack Software Engineer specializing in Python, Flask, responsive frontend engineering and DevOps."
+    >
+
+    <meta
+        property="og:url"
+        content="{{ config.site_url }}"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Aron Rop"
+    >
+
+    <meta
+        name="twitter:card"
+        content="summary"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Aron Rop — Full-Stack Software Engineer"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Python/Flask backend engineering, responsive interfaces and production-ready web systems."
+    >
+
+    <title>
+        {% block title %}
+        Aron Rop — Full-Stack Software Engineer
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/styles.css') }}"
+    >
+
+    <script
+        defer
+        src="{{ url_for('static', filename='js/main.js') }}"
+    ></script>
+</head>
+
+<body>
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a
+                class="brand"
+                href="#top"
+                aria-label="Aron Rop home"
+            >
+                <span class="brand-mark" aria-hidden="true">AR</span>
+
+                <span class="brand-copy">
+                    <strong>Aron Rop</strong>
+                    <span>Full-Stack Engineer</span>
+                </span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Open navigation menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav
+                id="primary-navigation"
+                class="primary-navigation"
+                aria-label="Primary navigation"
+            >
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a
+                    class="footer-brand"
+                    href="#top"
+                >
+                    Aron Rop
+                </a>
+
+                <p>
+                    Full-Stack Software Engineer building practical,
+                    maintainable web systems.
+                </p>
+            </div>
+
+            <nav
+                class="footer-nav"
+                aria-label="Footer navigation"
+            >
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="footer-social">
+                <a
+                    href="{{ config.github_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Aron Rop on GitHub"
+                >
+                    GitHub
+                </a>
+
+                {% if config.linkedin_url %}
+                <a
+                    href="{{ config.linkedin_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Aron Rop on LinkedIn"
+                >
+                    LinkedIn
+                </a>
+                {% endif %}
+
+                <a
+                    href="mailto:{{ config.email }}"
+                    aria-label="Email Aron Rop"
+                >
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>
+                © <span data-current-year></span> Aron Rop.
+                All rights reserved.
+            </span>
+
+            <span>
+                Built with Flask, semantic HTML, CSS and JavaScript.
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
